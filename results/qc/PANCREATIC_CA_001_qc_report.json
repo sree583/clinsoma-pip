@@ -1,0 +1,6 @@
+{
+    "sample_id": "PANCREATIC_CA_001",
+    "mean_target_coverage": 120,
+    "coverage_threshold": 100,
+    "qc_status": "PASS"
+}

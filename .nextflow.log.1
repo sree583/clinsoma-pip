@@ -1,0 +1,70 @@
+Jun-22 09:41:37.339 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Jun-22 09:41:37.455 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.4
+Jun-22 09:41:37.523 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/codespace/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.0,nf-tower@1.28.1,nf-wave@1.21.0
+Jun-22 09:41:37.550 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-22 09:41:37.551 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-22 09:41:37.554 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Jun-22 09:41:37.578 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Jun-22 09:41:37.775 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Jun-22 09:41:37.785 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-22 09:41:37.844 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Jun-22 09:41:37.926 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-22 09:41:37.927 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jun-22 09:41:37.965 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/codespace/.nextflow/secrets/store.json
+Jun-22 09:41:38.025 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1f966492] - activable => nextflow.secret.LocalSecretsProvider@1f966492
+Jun-22 09:41:38.061 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [silly_jepsen] - revision: 469e4dc050
+Jun-22 09:41:38.277 [main] DEBUG nextflow.Session - Session UUID: f7a5c6f3-ddc0-4f21-b5ed-efad83351af3
+Jun-22 09:41:38.277 [main] DEBUG nextflow.Session - Run name: silly_jepsen
+Jun-22 09:41:38.278 [main] DEBUG nextflow.Session - Executor pool size: 2
+Jun-22 09:41:38.319 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-22 09:41:38.335 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jun-22 09:41:38.377 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.4 build 12445
+  Created: 17-06-2026 16:30 UTC 
+  System: Linux 6.8.0-1052-azure
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 25.0.2+10-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 9920@codespaces-edd02d [127.0.0.1]
+  CPUs: 2 - Mem: 7.8 GB (166.1 MB) - Swap: 0 (0)
+Jun-22 09:41:38.450 [main] DEBUG nextflow.Session - Work-dir: /workspaces/clinsoma-pip/work [ext2/ext3]
+Jun-22 09:41:38.657 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jun-22 09:41:38.697 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Jun-22 09:41:38.705 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Jun-22 09:41:38.852 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-22 09:41:38.863 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Jun-22 09:41:38.935 [main] DEBUG nextflow.Session - Session start
+Jun-22 09:41:38.943 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Jun-22 09:41:39.394 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+Jun-22 09:41:39.414 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Jun-22 09:41:39.579 [main] ERROR nextflow.cli.Launcher - Script compilation failed
+nextflow.exception.ScriptCompilationException: Script compilation failed
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse0(ScriptLoaderV2.groovy:129)
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse(ScriptLoaderV2.groovy:81)
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse(ScriptLoaderV2.groovy)
+	at nextflow.script.ScriptRunner.parseScript(ScriptRunner.groovy:215)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:126)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+	at nextflow.cli.Launcher.run(Launcher.groovy:526)
+	at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Main: 7: Statements cannot be mixed with script declarations -- move statements into a process, workflow, or function @ line 7, column 1.
+   log.info """\
+   ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:148)
+	at nextflow.script.parser.ScriptAstBuilder.collectSyntaxError(ScriptAstBuilder.java:2195)
+	at nextflow.script.parser.ScriptAstBuilder.compilationUnit(ScriptAstBuilder.java:239)
+	at nextflow.script.parser.ScriptAstBuilder.buildAST(ScriptAstBuilder.java:202)
+	at nextflow.script.parser.ScriptParserPlugin.buildAST(ScriptParserPlugin.java:51)
+	at org.codehaus.groovy.control.SourceUnit.buildAST(SourceUnit.java:256)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:803)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:631)
+	at nextflow.script.parser.v2.ScriptCompiler.compile0(ScriptCompiler.java:146)
+	at nextflow.script.parser.v2.ScriptCompiler.compile(ScriptCompiler.java:112)
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse0(ScriptLoaderV2.groovy:114)
+	... 7 common frames omitted
